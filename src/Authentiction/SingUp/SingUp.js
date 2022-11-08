@@ -32,7 +32,7 @@ const SingUp = () => {
                     <form onSubmit={handleSingup} action="" className="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl bg-[#68968C]">
                         <p className="text-lg font-medium">Sign in to your account</p>
                         <div>
-                            <label for="name" className="text-sm font-medium">Name</label>
+                            <label htmlFor="name" className="text-sm font-medium">Name</label>
 
                             <div className="relative mt-1">
                                 <input
@@ -48,7 +48,7 @@ const SingUp = () => {
                         </div>
 
                         <div>
-                            <label for="email" className="text-sm font-medium">Email</label>
+                            <label htmlFor="email" className="text-sm font-medium">Email</label>
 
                             <div className="relative mt-1">
                                 <input
