@@ -15,16 +15,15 @@ const Home = () => {
                 >
                     <div class="max-w-xl text-center sm:text-left">
                         <h1 class="text-3xl font-extrabold sm:text-5xl text-white">
-                            Let us find your
+                            Welcome our
 
                             <strong class="block font-extrabold text-rose-700">
-                                Forever Home.
+                                Pato food resturent
                             </strong>
                         </h1>
 
                         <p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-white">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo
-                            tenetur fuga ducimus numquam ea!
+                            Food is the necessity of life. It provides nutrition, sustenance and growth to human body. Food can be classified into cereals, pulses, nuts and oilseeds, vegetable, fruits, milk and milk products and flesh food.
                         </p>
 
                         <div class="mt-8 flex flex-wrap gap-4 text-center">
