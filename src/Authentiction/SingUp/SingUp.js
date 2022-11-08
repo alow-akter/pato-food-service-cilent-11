@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const SingUp = () => {
-    const handleSubmitLogin = event => {
+    const { createUser } = useContext(AuthContext)
+    const handleSingup = event => {
         event.preventDefault()
+        const from = event.target
+        const email = from.email.value;
+        const password = from.password.value;
+        console.log(email, password)
+        from.reset()
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+
+            })
+            .catch(err => console.error(err))
     }
 
     return (
@@ -14,7 +29,7 @@ const SingUp = () => {
                         Please Sing Up
                     </h1>
 
-                    <form onSubmit={handleSubmitLogin} action="" className="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl bg-[#68968C]">
+                    <form onSubmit={handleSingup} action="" className="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl bg-[#68968C]">
                         <p className="text-lg font-medium">Sign in to your account</p>
                         <div>
                             <label for="name" className="text-sm font-medium">Name</label>

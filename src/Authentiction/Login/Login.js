@@ -1,7 +1,50 @@
-import React from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+
 
 const Login = () => {
+    const { login } = useContext(AuthContext)
+
+
+    const handleSubmit = event => {
+        event.preventDefault()
+        const from = event.target;
+        const email = from.email.value;
+        const password = from.password.value;
+        console.log(email, password)
+
+        login(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                from.reset()
+
+
+            })
+            .catch(err => {
+                console.error(err)
+
+            })
+
+
+    }
+
+    const { googleSingIn } = useContext(AuthContext)
+
+    const googleProvider = new GoogleAuthProvider()
+
+    const handleGoogleSingIn = () => {
+        googleSingIn(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error =>
+                console.error(error)
+            )
+    }
 
     return (
         <div className='mt-5 bg-[#68968C]'>
@@ -12,16 +55,16 @@ const Login = () => {
                         <h1 class="text-2xl font-bold sm:text-3xl">Please Login</h1>
                     </div>
 
-                    <form action="" class="mx-auto mt-8 mb-0 p-8 max-w-md space-y-4 ">
+                    <form onSubmit={handleSubmit} action="" class="mx-auto mt-8 mb-0 p-8 max-w-md space-y-4 ">
                         <div>
                             <label for="email" class="sr-only">Email</label>
 
                             <div class="relative">
                                 <input
                                     type="email"
-
+                                    name='email'
                                     class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                                    placeholder="Enter email"
+                                    placeholder="Enter email" required
                                 />
 
                                 <span class="absolute inset-y-0 right-4 inline-flex items-center">
@@ -44,18 +87,20 @@ const Login = () => {
                         </div>
 
                         <div>
-                            <label for="password" class="sr-only">Password</label>
+                            <label for="email" class="sr-only">Password</label>
+
                             <div class="relative">
                                 <input
                                     type="password"
-                                    class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                                    placeholder="Enter password"
+                                    name='password'
+                                    className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                    placeholder="Enter password" required
                                 />
 
-                                <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                                <span className="absolute inset-y-0 right-4 inline-flex items-center">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        class="h-5 w-5 text-gray-400"
+                                        className="h-5 w-5 text-gray-400"
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         stroke="currentColor"
@@ -75,11 +120,19 @@ const Login = () => {
                                     </svg>
                                 </span>
                             </div>
-                            <div className='mt-4'>
-                                <input className='block w-full rounded-lg bg-[#B5506B] hover:bg-[#e42054] px-5 py-3 text-sm font-medium text-white ' type="submit" value="Login" />
-                                <input className='block w-full rounded-lg  bg-[#B5506B] hover:bg-[#e5144c]  px-5 py-3 text-sm font-medium text-white mt-4' type="submit" value="GOOGLE" />
-                            </div>
                         </div>
+                        <button
+                            type="submit"
+                            className="block w-full rounded-lg bg-[#B5506B] hover:bg-[#e42054] px-5 py-3 text-sm font-medium text-white"
+                        >
+                            Login
+                        </button>
+                        <button onClick={handleGoogleSingIn}
+                            type="submit"
+                            className="block w-full rounded-lg bg-[#B5506B] hover:bg-[#e42054] px-5 py-3 text-sm font-medium text-white mt-4"
+                        >
+                            Google
+                        </button>
 
                         <div class="flex items-center justify-between">
                             <p class="text-sm text-white">
