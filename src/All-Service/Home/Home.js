@@ -1,8 +1,21 @@
-import React from 'react';
+
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import AllFood from '../AllFood/AllFood';
 
 const Home = () => {
+
+    const [foods, setFoods] = useState([])
+    console.log(foods);
+    useEffect(() => {
+        fetch('http://localhost:5001/food')
+            .then(res => res.json())
+            .then(data => setFoods(data))
+    }, [])
+
     return (
         <div>
+
             <section
                 className="relative bg-[url(https://www.gfs.com/sites/default/files/styles/hero_image_modern_/public/hero-modern/new%20products%20us%20web%20header.jpg?itok=LwOCf7mr)] bg-cover bg-center bg-no-repeat"
             >
@@ -27,24 +40,34 @@ const Home = () => {
                         </p>
 
                         <div class="mt-8 flex flex-wrap gap-4 text-center">
-                            <a
-                                href="#"
+                            <Link
+
                                 className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
                             >
                                 Get Started
-                            </a>
+                            </Link>
 
-                            <a
+                            <Link
                                 href="#"
                                 className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
                             >
                                 Learn More
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
             </section>
-            <div className="relative w-10/12 mx-auto flex gap-4 py-6 overflow-x-auto mt-20 bg-[#68968C] p-5">
+
+            <div className='grid lg:grid-cols-3 col-span-2'>
+                {
+                    foods.map(food => <AllFood key={food._id} food={food}></AllFood>)
+                }
+            </div>
+            <div className='text-center mt-7'>
+                <button type="button" className="px-8 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100 hover:bg-red-300">See All</button>
+            </div>
+
+            <div className="relative w-10/12 mx-auto flex gap-4 py-6 overflow-x-auto mt-20 bg-[#68968C] p-5 justify-between">
                 <img className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500" src="https://www.gfs.com/sites/default/files/styles/card_image_minimal/public/product-card-image/Final-Bakery.jpg?itok=jsMJQZIl" alt="" />
                 <img className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500" src="https://www.gfs.com/sites/default/files/styles/card_image_minimal/public/product-card-image/Final-Seafood.jpg?itok=aak9LfKY" alt="" />
                 <img className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500" src="https://www.gfs.com/sites/default/files/styles/card_image_minimal/public/product-card-image/Final-Dairy.jpg?itok=6AR9j1d5" alt="" />
