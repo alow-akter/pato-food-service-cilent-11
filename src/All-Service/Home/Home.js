@@ -67,7 +67,7 @@ const Home = () => {
                 }
             </div>
             <Link to='/foods' className='flex justify-center mt-7'>
-                <button type="button" className="px-8 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100 hover:bg-[#EF394C]">See All</button>
+                <button type="button" className="px-8 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100 bg-slate-400 hover:bg-[#EF394C]">See All</button>
             </Link>
 
             <div className="relative w-10/12 mx-auto flex gap-4 py-6 overflow-x-auto mt-20 bg-[#68968C] p-5 justify-between">
