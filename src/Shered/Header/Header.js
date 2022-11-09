@@ -13,7 +13,9 @@ const Header = () => {
     }
     const menuItems = <>
         <li className='ml-4'><Link to='/'>Home</Link></li>
+        <li className='ml-4'><Link to='/foods'>Foods</Link></li>
         <li className='ml-4'><Link to='/blog'>Blog</Link></li>
+
 
         {
             user?.email ?

@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import AllFood from "../All-Service/AllFood/AllFood";
 import Blog from "../All-Service/Blog/Blog";
+import DetailsCurd from "../All-Service/Detailscurd/DetailsCurd";
+import Foods from "../All-Service/Foods/Foods";
 import Home from "../All-Service/Home/Home";
 import Login from "../Authentiction/Login/Login";
 import SingUp from "../Authentiction/SingUp/SingUp";
@@ -24,8 +26,16 @@ export const routes = createBrowserRouter([
                 element: <Login></Login>
             },
             {
+                path: '/foods',
+                element: <Foods></Foods>
+            },
+            {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/detailsCurd/:id',
+                element: <DetailsCurd></DetailsCurd>
             }
 
         ]

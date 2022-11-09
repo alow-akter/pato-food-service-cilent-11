@@ -2,15 +2,17 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AllFood from '../AllFood/AllFood';
+import HomePricing from '../HomePricing/HomePricing';
 
 const Home = () => {
 
-    const [foods, setFoods] = useState([])
-    console.log(foods);
+
+    const [curd, setCurd] = useState([])
+
     useEffect(() => {
-        fetch('http://localhost:5001/food')
+        fetch('http://localhost:5001/threeCurd')
             .then(res => res.json())
-            .then(data => setFoods(data))
+            .then(data => setCurd(data))
     }, [])
 
     return (
@@ -60,12 +62,12 @@ const Home = () => {
 
             <div className='grid lg:grid-cols-3 col-span-2'>
                 {
-                    foods.map(food => <AllFood key={food._id} food={food}></AllFood>)
+                    curd.map(food => <AllFood key={food._id} food={food}></AllFood>)
                 }
             </div>
-            <div className='text-center mt-7'>
-                <button type="button" className="px-8 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100 hover:bg-red-300">See All</button>
-            </div>
+            <Link to='/foods' className='flex justify-center mt-7'>
+                <button type="button" className="px-8 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100 hover:bg-[#EF394C]">See All</button>
+            </Link>
 
             <div className="relative w-10/12 mx-auto flex gap-4 py-6 overflow-x-auto mt-20 bg-[#68968C] p-5 justify-between">
                 <img className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500" src="https://www.gfs.com/sites/default/files/styles/card_image_minimal/public/product-card-image/Final-Bakery.jpg?itok=jsMJQZIl" alt="" />
@@ -76,7 +78,9 @@ const Home = () => {
 
             <section className="py-6 dark:bg-gray-800 bg-[#68968C] mt-10">
                 <div className="container flex flex-col justify-center p-4 mx-auto">
-                    <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2  text-center text-1xl font-bold">
+                    <h3 className='text-3xl text-center text-pink-600'>Our Food Service</h3>
+                    <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2  text-center text-1xl font-bold mt-8">
+
                         <div>
                             <img className="object-cover w-full dark:bg-gray-500 aspect-square" src='https://img.favpng.com/2/23/4/dish-food-cuisine-ingredient-biryani-png-favpng-n7BudMgSN3cb1RMQLzsQ5hnyD.jpg' alt='' />
                             <h3>Chicken biryani</h3>
@@ -99,6 +103,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            <HomePricing></HomePricing>
 
         </div>
     );

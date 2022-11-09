@@ -3,28 +3,35 @@ import React from 'react';
 const Blog = () => {
     return (
         <div>
-            <section className="dark:bg-gray-800 dark:text-gray-100">
+            <section className="dark:bg-gray-800 dark:text-gray-100 mt-10">
                 <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
                     <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">How it works</p>
-                    <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">Frequently Asked Questions</h2>
+                    <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">Our Blog Side </h2>
                     <div className="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-700">
                         <details>
-                            <summary className="py-2 outline-none cursor-pointer focus:underline">Optio maiores eligendi molestiae totam dolores similique?</summary>
+                            <summary className="py-2 outline-none cursor-pointer focus:underline">Difference between SQL and NoSQL?</summary>
                             <div className="px-4 pb-4">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde neque in fugiat magni, quas animi enim veritatis deleniti ex. Impedit.</p>
+                                <p>SQL is the programming language used to interface with relational databases. (Relational databases model data as records in rows and tables with logical links between them). NoSQL is a class of DBMs that are non-relational and generally do not use SQL.</p>
                             </div>
                         </details>
                         <details>
-                            <summary className="py-2 outline-none cursor-pointer focus:underline">Modi dolorem veritatis culpa quos consequuntur beatae itaque excepturi perspiciatis?</summary>
+                            <summary className="py-2 outline-none cursor-pointer focus:underline">What is JWT, and how does it work??</summary>
                             <div className="px-4 pb-4">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aspernatur quae, eos explicabo odit minima libero veniam similique quibusdam doloribus facilis ipsa accusantium vel maiores corrupti! Libero voluptate a doloribus?</p>
+                                <p>JSON Web Token (JWT) is an open standard (RFC 7519) for securely transmitting information between parties as JSON object.
+                                    It is compact, readable and digitally signed using a private key/ or a public key pair by the Identity Provider(IdP).User sign-in using username and password or google/facebook.
+                                    Authentication server verifies the credentials and issues a jwt signed using either a secret salt or a private key.</p>
                             </div>
                         </details>
                         <details>
-                            <summary className="py-2 outline-none cursor-pointer focus:underline">Magni reprehenderit possimus debitis?</summary>
+                            <summary className="py-2 outline-none cursor-pointer focus:underline">What is the difference between javascript and NodeJS?</summary>
                             <div className="px-4 pb-4 space-y-2">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates aspernatur dolores in consequatur doloremque inventore reprehenderit, consequuntur perspiciatis architecto.</p>
-                                <p>Sed consectetur quod tenetur! Voluptatibus culpa incidunt veritatis velit quasi cupiditate unde eaque! Iure, voluptatibus autem eaque unde possimus quae.</p>
+                                <p>JavaScript is a simple programming language that can be used with any browser that has the JavaScript Engine installed. Node. js, on the other hand, is an interpreter or execution environment for the JavaScript programming language</p>
+                            </div>
+                        </details>
+                        <details>
+                            <summary className="py-2 outline-none cursor-pointer focus:underline">How does NodeJS handle multiple requests at the same time?</summary>
+                            <div className="px-4 pb-4 space-y-2">
+                                <p>How NodeJS handle multiple client requests? NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them.</p>
                             </div>
                         </details>
                     </div>

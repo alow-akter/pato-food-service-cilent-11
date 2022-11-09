@@ -148,7 +148,7 @@ const Login = () => {
                 <div class="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
                     <img
                         alt="Welcome"
-                        src="https://cdn.pixabay.com/photo/2014/12/16/12/59/login-570317_1280.jpg"
+                        src="https://img.lovepik.com/element/45009/2329.png_300.png"
                         class="absolute inset-0 h-full w-full object-cover"
                     />
                 </div>
