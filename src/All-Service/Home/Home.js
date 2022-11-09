@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import AllFood from '../AllFood/AllFood';
 import HomePricing from '../HomePricing/HomePricing';
 

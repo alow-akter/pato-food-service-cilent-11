@@ -2,11 +2,12 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 
 const Login = () => {
     const { login } = useContext(AuthContext)
-
+    useTitle('Login')
 
     const handleSubmit = event => {
         event.preventDefault()

@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import AllFood from "../All-Service/AllFood/AllFood";
+
 import Blog from "../All-Service/Blog/Blog";
 import DetailsCurd from "../All-Service/Detailscurd/DetailsCurd";
 import Foods from "../All-Service/Foods/Foods";
@@ -35,7 +35,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/detailsCurd/:id',
-                element: <DetailsCurd></DetailsCurd>
+                element: <DetailsCurd></DetailsCurd>,
+
             }
 
         ]

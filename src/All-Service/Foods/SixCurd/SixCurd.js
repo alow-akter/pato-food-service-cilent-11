@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SixCurd = ({ simpleCurd }) => {
-    const { title, img, price, description, rating } = simpleCurd
+    const { _id, title, img, price, description, rating } = simpleCurd
     return (
         <div className='flex justify-between mx-auto mt-8 shadow-gray-500 shadow-lg'>
             <div className="max-w-xs p-3 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-50">
@@ -29,22 +29,11 @@ const SixCurd = ({ simpleCurd }) => {
                     </div>
                     <div className='flex justify-center mt-5 '>
 
-                        <button>
-                            <Link
-                                class="group relative inline-block overflow-hidden border border-indigo-600 px-8 py-3 focus:outline-none focus:ring"
-                                href="/download"
-                            >
-                                <span
-                                    class="absolute inset-y-0 right-0 w-[2px] bg-rose-600 transition-all group-hover:w-full group-active:bg-indigo-500"
-                                ></span>
 
-                                <span
-                                    class="relative text-sm font-medium text-indigo-600 transition-colors group-hover:text-white"
-                                >
-                                    View All
-                                </span>
-                            </Link>
-                        </button>
+                        <Link to={`/detailsCurd/${_id}`}>
+                            <button className='btn btn-primary'>View All</button>
+                        </Link>
+
                     </div>
                 </div>
                 <p className="dark:text-gray-100"></p>

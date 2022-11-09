@@ -1,6 +1,8 @@
 import React from 'react';
 
 const HomePricing = () => {
+
+
     return (
         <div>
             <section className="py-20 dark:bg-gray-800 dark:text-gray-100 bg-[#A0C2BB] mt-5">
