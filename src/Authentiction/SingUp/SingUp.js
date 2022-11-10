@@ -4,20 +4,41 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
 
 const SingUp = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, upDateProfileInfo } = useContext(AuthContext)
     useTitle('SingUp')
+
+    const updateInfo = (name, photoURL) => {
+
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+
+        upDateProfileInfo(profile)
+            .then((result) => {
+                const user = result.user
+                console.log(user)
+            })
+            .then((error) => console.log(error))
+
+    }
+
     const handleSingup = event => {
         event.preventDefault()
         const from = event.target
+        const name = from.fullName.value
         const email = from.email.value;
         const password = from.password.value;
-        console.log(email, password)
-        from.reset()
+        const photoUrl = from.photo.value
+        console.log(name)
+
 
         createUser(email, password)
             .then(result => {
                 const user = result.user
+                updateInfo(name, photoUrl)
                 console.log(user)
+                from.reset()
 
             })
             .catch(err => console.error(err))
@@ -38,8 +59,8 @@ const SingUp = () => {
 
                             <div className="relative mt-1">
                                 <input
-                                    type="name"
-                                    name='name'
+                                    type="text"
+                                    name='fullName'
                                     id="name"
                                     className="w-full rounded-lg border-gray-500 p-4 pr-12 text-sm shadow-sm"
                                     placeholder="Enter name"
@@ -48,7 +69,21 @@ const SingUp = () => {
 
                             </div>
                         </div>
+                        <div>
+                            <label htmlFor="name" className="text-sm font-medium">Photo url</label>
 
+                            <div className="relative mt-1">
+                                <input
+                                    type="text"
+                                    name='photo'
+                                    id="name"
+                                    className="w-full rounded-lg border-gray-500 p-4 pr-12 text-sm shadow-sm"
+                                    placeholder="Enter Photo Url"
+                                />
+
+
+                            </div>
+                        </div>
                         <div>
                             <label htmlFor="email" className="text-sm font-medium">Email</label>
 

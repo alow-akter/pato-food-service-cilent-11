@@ -69,14 +69,16 @@ const Home = () => {
             <Link to='/foods' className='flex justify-center mt-7'>
                 <button type="button" className="px-8 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100 bg-slate-400 hover:bg-[#EF394C]">See All</button>
             </Link>
+            <div className='mt-5'>
+                <h2 className='text-center text-3xl text-pink-700 font-bold '>Our expensive food </h2>
+                <div className="relative w-10/12 mx-auto flex gap-4 py-6 overflow-x-auto mt-6 bg-[#68968C] p-5 justify-between">
 
-            <div className="relative w-10/12 mx-auto flex gap-4 py-6 overflow-x-auto mt-20 bg-[#68968C] p-5 justify-between">
-                <img className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500" src="https://www.gfs.com/sites/default/files/styles/card_image_minimal/public/product-card-image/Final-Bakery.jpg?itok=jsMJQZIl" alt="" />
-                <img className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500" src="https://www.gfs.com/sites/default/files/styles/card_image_minimal/public/product-card-image/Final-Seafood.jpg?itok=aak9LfKY" alt="" />
-                <img className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500" src="https://www.gfs.com/sites/default/files/styles/card_image_minimal/public/product-card-image/Final-Dairy.jpg?itok=6AR9j1d5" alt="" />
+                    <img className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500" src="https://www.gfs.com/sites/default/files/styles/card_image_minimal/public/product-card-image/Final-Bakery.jpg?itok=jsMJQZIl" alt="" />
+                    <img className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500" src="https://www.gfs.com/sites/default/files/styles/card_image_minimal/public/product-card-image/Final-Seafood.jpg?itok=aak9LfKY" alt="" />
+                    <img className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500" src="https://www.gfs.com/sites/default/files/styles/card_image_minimal/public/product-card-image/Final-Dairy.jpg?itok=6AR9j1d5" alt="" />
 
+                </div>
             </div>
-
             <section className="py-6 dark:bg-gray-800 bg-[#68968C] mt-10">
                 <div className="container flex flex-col justify-center p-4 mx-auto">
                     <h3 className='text-3xl text-center text-pink-600'>Our Food Service</h3>

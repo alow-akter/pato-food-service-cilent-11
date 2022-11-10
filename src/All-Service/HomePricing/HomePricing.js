@@ -12,7 +12,7 @@ const HomePricing = () => {
                         <h2 className="text-4xl font-bold lg:text-5xl">Choose your best offer</h2>
                     </div>
                     <div className="flex flex-wrap items-stretch -mx-4">
-                        <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0 ">
+                        <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/4 lg:mb-0 ">
                             <div className="flex flex-col p-6 space-y-6 rounded shadow sm:p-8 dark:bg-gray-900 bg-[#E68C86]">
                                 <div className="space-y-2">
                                     <h4 className="text-2xl font-bold">Weekly</h4>

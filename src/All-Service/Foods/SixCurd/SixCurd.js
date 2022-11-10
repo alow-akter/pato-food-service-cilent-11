@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const SixCurd = ({ simpleCurd }) => {
     const { _id, title, img, price, description, rating } = simpleCurd
     return (
         <div className='flex justify-between mx-auto mt-8 shadow-gray-500 shadow-lg'>
             <div className="max-w-xs p-3 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-50">
-                <img src={img} alt="" className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
+                <PhotoProvider>
+                    <PhotoView src={img}>
+                        <img src={img} alt="" />
+                    </PhotoView>
+                </PhotoProvider>
                 <div className="mt-6 mb-2">
                     <h2 className="text-xl font-semibold tracking-wide">{title}</h2>
                     <div>
@@ -28,7 +34,6 @@ const SixCurd = ({ simpleCurd }) => {
 
                     </div>
                     <div className='flex justify-center mt-5 '>
-
 
                         <Link to={`/detailsCurd/${_id}`}>
                             <button className='btn btn-primary'>View All</button>

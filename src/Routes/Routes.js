@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Blog from "../All-Service/Blog/Blog";
 import DetailsCurd from "../All-Service/Detailscurd/DetailsCurd";
 import Foods from "../All-Service/Foods/Foods";
+import FoodService from "../All-Service/FoodsService/FoodService";
 import Home from "../All-Service/Home/Home";
 import Login from "../Authentiction/Login/Login";
 import SingUp from "../Authentiction/SingUp/SingUp";
@@ -38,7 +39,13 @@ export const routes = createBrowserRouter([
                 element: <DetailsCurd></DetailsCurd>,
                 loader: ({ params }) => fetch(`http://localhost:5001/food/${params.id}`)
 
+            },
+            {
+                path: '/foodService',
+                element: <FoodService></FoodService>,
+
             }
+
 
         ]
     }

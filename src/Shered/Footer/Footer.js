@@ -40,6 +40,7 @@ const Footer = () => {
                                 </svg>
                             </a>
                         </div>
+                        <p>copy write pato food service © 2022 </p>
                     </div>
                 </div>
             </footer>
