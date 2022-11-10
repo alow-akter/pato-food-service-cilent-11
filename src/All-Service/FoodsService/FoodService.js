@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-
+import React from 'react';
 
 
 const FoodService = () => {
@@ -7,18 +6,20 @@ const FoodService = () => {
     const handleFoods = event => {
         event.preventDefault()
         const from = event.target;
-        const name = from.name.value;
-        const photoURL = from.photo.value;
+        const title = from.title.value;
+        const img = from.img.value;
         const price = from.price.value;
         const rating = from.rating.value;
-        const message = from.message.value;
-        console.log(name, photoURL, price, rating, message,)
+        const description = from.description.value;
+        console.log(title, img, price, rating, description,)
+        // console.log(img)
 
         const foodService = {
-            name,
-            photoURL,
+            title,
+            img,
             price,
-            rating, message
+            rating,
+            description
         }
         fetch('http://localhost:5001/foodService', {
             method: 'POST',
@@ -62,7 +63,7 @@ const FoodService = () => {
                                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                                 id="exampleInput7"
                                 placeholder="Service Name"
-                                name="name"
+                                name="title"
                             />
                         </div>
 
@@ -86,7 +87,7 @@ const FoodService = () => {
                                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                                 id="exampleInput7"
                                 placeholder="Service Picture"
-                                name="photo"
+                                name="img"
                             />
                         </div>
                         <div className="form-group mb-6">
@@ -153,7 +154,7 @@ const FoodService = () => {
                                 id="exampleFormControlTextarea13"
                                 rows="3"
                                 placeholder="Service Describe"
-                                name="message"
+                                name="description"
                             ></textarea>
                         </div>
                         <div className="form-group form-check text-center mb-6"></div>

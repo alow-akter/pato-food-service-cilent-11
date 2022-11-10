@@ -5,6 +5,7 @@ import DetailsCurd from "../All-Service/Detailscurd/DetailsCurd";
 import Foods from "../All-Service/Foods/Foods";
 import FoodService from "../All-Service/FoodsService/FoodService";
 import Home from "../All-Service/Home/Home";
+import SimpleFood from "../All-Service/SimpleFood/SimpleFood";
 import Login from "../Authentiction/Login/Login";
 import SingUp from "../Authentiction/SingUp/SingUp";
 import Main from "../Layout/Main";
@@ -44,7 +45,8 @@ export const routes = createBrowserRouter([
                 path: '/foodService',
                 element: <FoodService></FoodService>,
 
-            }
+
+            },
 
 
         ]

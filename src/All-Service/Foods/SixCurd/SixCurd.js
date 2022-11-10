@@ -25,14 +25,11 @@ const SixCurd = ({ simpleCurd }) => {
                             <input type="radio" name="rating-3" className="mask mask-heart bg-yellow-400" />
                         </div>
                     </div>
-                    <div>
-                        {description.length > 250 ?
-                            <p>{description.slice(0, 100) + '...'}</p>
-                            :
-                            <p>{description}</p>
-                        }
-
-                    </div>
+                    {description?.length > 250 ?
+                        <p>{description?.slice(0, 150) + '...'} </p>
+                        :
+                        <p>{description}</p>
+                    }
                     <div className='flex justify-center mt-5 '>
 
                         <Link to={`/detailsCurd/${_id}`}>
