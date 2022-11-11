@@ -1,10 +1,11 @@
 import React from 'react';
 
-const ReviewCurd = ({ recurd }) => {
-    const { displayName, photoURL, message } = recurd
-    console.log(photoURL)
+const MyReviewCurd = ({ rev }) => {
+
+    const { displayName, photoURL, message } = rev
+
     return (
-        <div className=''>
+        <div>
             <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
                 <div className="flex justify-between p-4">
                     <div className="flex space-x-4">
@@ -13,7 +14,7 @@ const ReviewCurd = ({ recurd }) => {
                         </div>
                         <div>
                             <h4 className="font-bold">{displayName}</h4>
-                            <span className="text-xs dark:text-gray-400">2 days ago</span>
+
                         </div>
                     </div>
                     <div className="flex items-center space-x-2 dark:text-yellow-500">
@@ -32,4 +33,4 @@ const ReviewCurd = ({ recurd }) => {
     );
 };
 
-export default ReviewCurd;
+export default MyReviewCurd;

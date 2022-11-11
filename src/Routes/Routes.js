@@ -5,6 +5,7 @@ import DetailsCurd from "../All-Service/Detailscurd/DetailsCurd";
 import Foods from "../All-Service/Foods/Foods";
 import FoodService from "../All-Service/FoodsService/FoodService";
 import Home from "../All-Service/Home/Home";
+import MyReview from "../All-Service/MyReview/MyReview";
 
 import Login from "../Authentiction/Login/Login";
 import SingUp from "../Authentiction/SingUp/SingUp";
@@ -44,10 +45,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/foodService',
                 element: <FoodService></FoodService>,
-
-
             },
-
+            {
+                path: '/myReview',
+                element: <MyReview></MyReview>
+            }
 
         ]
     }

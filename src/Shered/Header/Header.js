@@ -25,6 +25,7 @@ const Header = () => {
             user?.email ?
                 <>
                     <li className='ml-4'><Link to='/foodService'>Food Service</Link></li>
+                    <li className='ml-4'><Link to='/myReview'>My Review</Link></li>
                     <li className='font-semibold m-3'>
                         <button onClick={handleLogOut} className=' btn-ghost'>Sing 0ut</button>
                     </li>
