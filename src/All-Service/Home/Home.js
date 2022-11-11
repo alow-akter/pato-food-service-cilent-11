@@ -11,7 +11,7 @@ const Home = () => {
     const [curd, setCurd] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5001/threeCurd')
+        fetch('https://foodserver-nu.vercel.app/threeCurd')
             .then(res => res.json())
             .then(data => setCurd(data))
     }, [])
@@ -34,7 +34,7 @@ const Home = () => {
                             Welcome our
 
                             <strong class="block font-extrabold text-rose-700">
-                                Pato food resturent
+                                Pato food restaurant
                             </strong>
                         </h1>
 

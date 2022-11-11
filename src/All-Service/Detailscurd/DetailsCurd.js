@@ -30,7 +30,7 @@ const DetailsCurd = () => {
             email
 
         }
-        fetch('http://localhost:5001/reviews', {
+        fetch('https://foodserver-nu.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,7 +50,7 @@ const DetailsCurd = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5001/reviewsById?food=${_id}`)
+        fetch(`https://foodserver-nu.vercel.app/reviewsById?food=${_id}`)
             .then(res => res.json())
             .then(data => setReviewCurd(data))
     }, [])
