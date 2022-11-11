@@ -4,7 +4,7 @@ const ReviewCurd = ({ recurd }) => {
     const { displayName, photoURL, message } = recurd
     console.log(photoURL)
     return (
-        <div className=''>
+        <div>
             <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
                 <div className="flex justify-between p-4">
                     <div className="flex space-x-4">

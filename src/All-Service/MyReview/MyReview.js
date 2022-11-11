@@ -17,7 +17,7 @@ const MyReview = () => {
     return (
         <div>
 
-            <div className='grid grid-cols-2'>
+            <div className='grid lg:grid-cols-2 gap-6'>
                 {
                     orders.map(rev => <MyReviewCurd key={rev._id} rev={rev}></MyReviewCurd>)
                 }

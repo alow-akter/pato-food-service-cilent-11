@@ -184,7 +184,7 @@ const DetailsCurd = () => {
                     </form>
                 </div>
             </div>
-            <div className='flex justify-center mt-3'>
+            <div className='flex justify-center mt-3 gap-3'>
                 {reviewCurd.map(recurd => <ReviewCurd key={recurd._id} recurd={recurd}></ReviewCurd>)}
             </div>
 
