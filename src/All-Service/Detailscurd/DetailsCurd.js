@@ -9,6 +9,7 @@ import ReviewCurd from '../ReviewCurd/ReviewCurd';
 const DetailsCurd = () => {
     const { _id, img, title, description, price, rating } = useLoaderData()
     const { user } = useContext(AuthContext)
+    console.log(user)
     const [reviewCurd, setReviewCurd] = useState([])
     const handleReviewSubmit = event => {
         event.preventDefault()

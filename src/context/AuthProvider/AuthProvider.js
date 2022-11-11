@@ -41,9 +41,9 @@ const AuthProvider = ({ children }) => {
             setLoading(false)
         })
 
-        return () => {
-            return unsubscribe()
-        }
+        return () => unsubscribe()
+
+
 
     }, [])
 
@@ -51,6 +51,7 @@ const AuthProvider = ({ children }) => {
 
 
     const authInfo = { user, loading, googleSingIn, createUser, login, logOut, upDateProfileInfo }
+    console.log(user);
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
